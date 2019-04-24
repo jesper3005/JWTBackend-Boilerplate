@@ -170,15 +170,23 @@ One way to do this is via the steps given below:
 
 USE seed;
 -- Delete all previous data first
+
 DELETE FROM user_roles WHERE NOT user_name='xxx';
+
 DELETE FROM roles WHERE NOT role_name ='xxx';
+
 DELETE FROM users WHERE NOT user_name ='xxx';
 
 INSERT INTO users (user_name, user_pass) VALUES ('user', 'Hashed-from-your-local-db');
+
 INSERT INTO users (user_name, user_pass) VALUES ('admin', 'Hashed-from-your-local-db');
+
 INSERT INTO roles (role_name) VALUES ('user');
+
 INSERT INTO roles (role_name) VALUES ('admin');
+
 INSERT INTO user_roles (user_name, role_name) VALUES ('user', 'user');
+
 INSERT INTO user_roles (user_name, role_name) VALUES ('admin', 'admin');
 
 6. Remember, JPA uses by default caching, so you need to restart your Tomcat Server to see this take effect.
