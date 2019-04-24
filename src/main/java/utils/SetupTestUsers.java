@@ -16,6 +16,7 @@ public class SetupTestUsers {
     
     //throw new UnsupportedOperationException("REMOVE THIS LINE, WHEN YOU HAVE READ WARNING");
     
+    //For travis sake
     em.getTransaction().begin();
     Role userRole = new Role("user");
     Role adminRole = new Role("admin");
