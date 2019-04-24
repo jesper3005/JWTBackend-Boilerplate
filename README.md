@@ -135,20 +135,24 @@ Preparing the project for CI and Continuous Deployment.
 
 ***
 
-a) If not already done clone and push the project to your own repository
-b) Login to Travis, locate your project and “pull the switch” to make it available to Travis
+1. If not already done clone and push the project to your own repository
+
+2. Login to Travis, locate your project and “pull the switch” to make it available to Travis
  Travis and Databases for testing. Remember from the previous setup that the tests require two databases. The in-memory database, which will work fine also on Travis, and also a MySQL database used for integration tests. Fortunately, Travis makes it very simple to automatically set up a MySQL database which can be used for our tests. The start code ships with this ready to go (see the files .travis.yml and pu_travis_integration_test.properties). Read more here ONLY if you want all the details.
 Safely Deploy from Travis
+
 The only thing missing, to repeat all the previous steps via Travis is to find a way to pass in the values for deployment, see this line in .travis.yml: 
 - mvn -Dremote.user=$REMOTE_USER -Dremote.password=$REMOTE_PW tomcat7:deploy
 
 ***
 
-a) Open your project on travis-ci.org and define the two variables REMOTE_USER and REMOTE_PW with the values necessary to deploy to your Tomcat as described here
+1. Open your project on travis-ci.org and define the two variables REMOTE_USER and REMOTE_PW with the values necessary to deploy to your Tomcat as described here
 
-b) commit and push your project, and verify that Travis will execute your tests, and if all green, deploy your project to your Tomcat Server
+2. commit and push your project, and verify that Travis will execute your tests, and if all green, deploy your project to your Tomcat Server
 Handle Passwords the right way
 Repeat the steps from last weeks security exercise, and change the code to Hash and Salt passwords before they are stored in the database.
+
+***
 
 Create the initial users and roles with hashed passwords
 We just need one more thing to get started, and that is to add some initial users with hashed/salted passwords.
