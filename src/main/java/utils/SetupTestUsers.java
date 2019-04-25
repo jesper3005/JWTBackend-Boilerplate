@@ -16,14 +16,15 @@ public class SetupTestUsers {
     
     //throw new UnsupportedOperationException("REMOVE THIS LINE, WHEN YOU HAVE READ WARNING");
     
+    /*
     em.getTransaction().begin();
     Role userRole = new Role("user");
     Role adminRole = new Role("admin");
-    User user = new User("user", "1234");
+    User user = new User("user", "");
     user.addRole(userRole);
-    User admin = new User("admin", "admin");
+    User admin = new User("admin", "");
     admin.addRole(adminRole);
-    User both = new User("user_admin", "1234admin");
+    User both = new User("user_admin", "");
     both.addRole(userRole);
     both.addRole(adminRole);
     em.persist(userRole);
@@ -32,10 +33,7 @@ public class SetupTestUsers {
     em.persist(admin);
     em.persist(both);
     em.getTransaction().commit();
-    System.out.println("PW: " + user.getUserPass());
-    System.out.println("Testing user with OK password: " + user.verifyPassword("1234"));
-    System.out.println("Testing user with wrong password: " + user.verifyPassword("test1"));
-    System.out.println("Created TEST Users");
+    */
    
   }
 
